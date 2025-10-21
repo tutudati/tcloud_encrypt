@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tcloud\\Exam\\' => array($baseDir . '/src'),
+    'Qlcloud\\Cloud\\' => array($baseDir . '/src'),
 );

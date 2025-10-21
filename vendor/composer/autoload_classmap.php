@@ -7,4 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Qlcloud\\Cloud\\Base' => $baseDir . '/src/Base.php',
+    'Qlcloud\\Cloud\\Config' => $baseDir . '/src/Config.php',
+    'Qlcloud\\Cloud\\Log' => $baseDir . '/src/Log.php',
+    'Qlcloud\\Cloud\\SecureCrypto' => $baseDir . '/src/SecureCrypto.php',
 );

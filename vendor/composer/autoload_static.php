@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit704e8c78d173a36200949f15a3f8f1a2
 {
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'Q' => 
         array (
-            'Tcloud\\Exam\\' => 12,
+            'Qlcloud\\Cloud\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tcloud\\Exam\\' => 
+        'Qlcloud\\Cloud\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
@@ -22,6 +22,10 @@ class ComposerStaticInit704e8c78d173a36200949f15a3f8f1a2
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Qlcloud\\Cloud\\Base' => __DIR__ . '/../..' . '/src/Base.php',
+        'Qlcloud\\Cloud\\Config' => __DIR__ . '/../..' . '/src/Config.php',
+        'Qlcloud\\Cloud\\Log' => __DIR__ . '/../..' . '/src/Log.php',
+        'Qlcloud\\Cloud\\SecureCrypto' => __DIR__ . '/../..' . '/src/SecureCrypto.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

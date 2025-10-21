@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tcloud\Exam;
+namespace Qlcloud\Cloud;
 
 class Config
 {

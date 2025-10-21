@@ -1,11 +1,11 @@
 {
-    "name": "tcloud/exam",
+    "name": "qlcloud/cloud",
     "description": "tcloud Third-party package verification for Rabbit Quiz.",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Tcloud\\Exam\\": "src/"
+            "Qlcloud\\Cloud\\": "src/"
         }
     },
     "authors": [
@@ -18,5 +18,8 @@
     "require": {
         "php": ">=8.2",
         "ext-openssl": "*"
+    },
+    "scripts": {
+        "encrypt": "php src/example/encrypt.php"
     }
 }
