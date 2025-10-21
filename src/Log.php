@@ -5,8 +5,8 @@ namespace Tcloud\Exam;
 
 class Log extends Base
 {
-    public static function init(): self
+    public function __construct()
     {
-        return  (new self());
+        parent::__construct();
     }
 }

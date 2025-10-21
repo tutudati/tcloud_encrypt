@@ -14,3 +14,9 @@ openssl genrsa -out private_key.pem 2048
 openssl rsa -in private_key.pem -pubout -out public_key.pem
 ```
 
+## 如何使用
+
+- 找到example.php文件，替换里面的域名。然后`php  php encrypt.php`得到加密的内容，将加密的内容复制到config.php文件的配置中。
+
+- 在需要验证的地方实例化Log类即可。
+
