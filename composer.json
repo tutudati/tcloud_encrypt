@@ -20,6 +20,6 @@
         "ext-openssl": "*"
     },
     "scripts": {
-        "encrypt": "php src/example/encrypt.php"
+        "encrypt": "php src/command/encrypt.php"
     }
 }
