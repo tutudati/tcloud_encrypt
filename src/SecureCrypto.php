@@ -49,10 +49,12 @@ class SecureCrypto
                 $res,
                 OPENSSL_PKCS1_OAEP_PADDING,
             );
-            openssl_free_key($res);
+            $res = null;
 
             if (!$result) {
-                throw new Exception("RSA加密密钥失败: " . openssl_error_string());
+                throw new Exception(
+                    "RSA加密密钥失败: " . openssl_error_string(),
+                );
             }
 
             $signature = "";
@@ -63,7 +65,7 @@ class SecureCrypto
             }
 
             openssl_sign($data, $signature, $res, OPENSSL_ALGO_SHA256);
-            openssl_free_key($res);
+            $res = null;
 
             $package = [
                 "data" => base64_encode($encryptedData),
@@ -74,9 +76,11 @@ class SecureCrypto
                 "ver" => "1.0",
             ];
             $jsonData = json_encode($package);
-            if (is_string($jsonData)) return base64_encode($jsonData);
+            if (is_string($jsonData)) {
+                return base64_encode($jsonData);
+            }
             return "";
-        }catch (Exception $exception) {
+        } catch (Exception $exception) {
             return "";
         }
     }
@@ -107,10 +111,12 @@ class SecureCrypto
                 $res,
                 OPENSSL_PKCS1_OAEP_PADDING,
             );
-            openssl_free_key($res);
+            $res = null;
 
             if (!$result) {
-                throw new Exception("RSA解密密钥失败: " . openssl_error_string());
+                throw new Exception(
+                    "RSA解密密钥失败: " . openssl_error_string(),
+                );
             }
 
             $decryptedData = openssl_decrypt(
@@ -136,15 +142,15 @@ class SecureCrypto
                 $res,
                 OPENSSL_ALGO_SHA256,
             );
-            openssl_free_key($res);
+            $res = null;
 
             if ($isValid !== 1) {
                 throw new Exception("数字签名验证失败，数据可能被篡改！");
             }
 
             return $decryptedData;
-        }catch (Exception $exception) {
-            return  "";
+        } catch (Exception $exception) {
+            return "";
         }
     }
 
@@ -161,7 +167,7 @@ class SecureCrypto
 
         $signature = "";
         openssl_sign($data, $signature, $res, OPENSSL_ALGO_SHA256);
-        openssl_free_key($res);
+        $res = null;
 
         return base64_encode($signature);
     }
@@ -179,7 +185,7 @@ class SecureCrypto
         }
 
         $result = openssl_verify($data, $signature, $res, OPENSSL_ALGO_SHA256);
-        openssl_free_key($res);
+        $res = null;
 
         return $result === 1;
     }
